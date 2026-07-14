@@ -6,6 +6,9 @@ metadata:
   namespace: kgateway-system
 spec:
   gatewayClassName: kgateway
+  addresses:
+  - type: IPAddress
+    value: {{ .Values.loadBalancerIP }}
   listeners:
     - allowedRoutes:
         namespaces:
