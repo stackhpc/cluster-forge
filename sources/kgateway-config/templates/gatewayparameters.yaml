@@ -1,0 +1,10 @@
+apiVersion: gateway.networking.k8s.io/v1alpha1
+kind: GatewayParameters
+metadata:
+  name: openstack-gateway-params
+  namespace: kgateway-system
+spec:
+  kube:
+    service:
+      annotations:
+        loadbalancer.openstack.org/floating-ip: "{{ .Values.loadBalancerIP }}"

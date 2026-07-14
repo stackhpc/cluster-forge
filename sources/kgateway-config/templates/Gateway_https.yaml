@@ -6,9 +6,11 @@ metadata:
   namespace: kgateway-system
 spec:
   gatewayClassName: kgateway
-  addresses:
-  - type: IPAddress
-    value: {{ .Values.loadBalancerIP }}
+  infrastructure:
+    parametersRef:
+      name: custom-gateway-params
+      group: gateway.kgateway.dev
+      kind: GatewayParameters
   listeners:
     - allowedRoutes:
         namespaces:
