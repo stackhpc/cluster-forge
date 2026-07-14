@@ -1,0 +1,9 @@
+apiVersion: gateway.kgateway.dev/v1alpha1
+kind: EnvoyProxy
+metadata:
+  name: openstack-fip-proxy
+  namespace: kgateway-system
+spec:
+  service:
+    type: LoadBalancer
+    loadBalancerIP: "{{ .Values.loadBalancerIP }}"

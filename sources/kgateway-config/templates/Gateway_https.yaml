@@ -8,7 +8,7 @@ spec:
   gatewayClassName: kgateway
   infrastructure:
     parametersRef:
-      name: custom-gateway-params
+      name: openstack-gateway-params
       group: gateway.kgateway.dev
       kind: GatewayParameters
   listeners:

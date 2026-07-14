@@ -5,6 +5,6 @@ metadata:
   namespace: kgateway-system
 spec:
   kube:
-    service:
-      annotations:
-        loadbalancer.openstack.org/floating-ip: "{{ .Values.loadBalancerIP }}"
+    serviceOverlay:
+      spec:
+        loadBalancerIP: "{{ .Values.loadBalancerIP }}"
